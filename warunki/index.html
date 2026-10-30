@@ -4,34 +4,51 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Warunki korzystania – Odcinkowy</title>
+  <meta name="theme-color" content="#F4F3EF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101215" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <nav>
-    <a href="/">Odcinkowy</a>
-    <a href="/prywatnosc/">Prywatność</a>
-    <a href="/warunki/">Warunki</a>
-    <a href="/wsparcie/">Wsparcie</a>
-  </nav>
+<div class="page">
+  <header class="site-header">
+    <a class="brand" href="/"><img src="/favicon.svg" alt="" width="40" height="40">Odcinkowy</a>
+    <nav class="site-nav" aria-label="Główna">
+      <a class="nav-link" href="/#funkcje">Funkcje</a>
+      <a class="button" href="/#pobierz">Pobierz</a>
+    </nav>
+  </header>
 
-  <h1>Warunki korzystania</h1>
-  <p>Aplikacja Odcinkowy na iOS i&nbsp;Androida. Wersja z&nbsp;30 października 2026&nbsp;r.</p>
+  <main class="document">
+    <h1>Warunki korzystania</h1>
+    <p class="meta">Aplikacja Odcinkowy na iOS i&nbsp;Androida. Wersja z&nbsp;30 października 2026&nbsp;r.</p>
 
-  <ol>
-    <li>Aplikacja jest bezpłatna. Udostępnia ją Marcin Obolewicz, <a href="mailto:kontakt@odcinkowy.eu">kontakt@odcinkowy.eu</a>.</li>
-    <li>Aplikacja tylko podpowiada. Obowiązują znaki drogowe i&nbsp;przepisy ruchu drogowego, a&nbsp;za sposób jazdy odpowiada kierowca.</li>
-    <li>W trakcie jazdy nie obsługuj telefonu. Aplikację uruchamiasz przed jazdą; w&nbsp;trakcie nie trzeba jej dotykać.</li>
-    <li>Dane o&nbsp;odcinkach, limitach i&nbsp;fotoradarach pochodzą z&nbsp;OpenStreetMap i&nbsp;z&nbsp;rejestru CANARD Głównego Inspektoratu Transportu Drogowego. Mogą być niepełne albo nieaktualne. Gdy limitu nie ma w&nbsp;danych, aplikacja pokazuje „?”.</li>
-    <li>Pozycja z&nbsp;GPS ma ograniczoną dokładność, a&nbsp;urządzenie pomiarowe może zmierzyć inaczej niż aplikacja. Zalecana prędkość nie gwarantuje, że zmierzona średnia nie przekroczy limitu ani że nie dostaniesz mandatu.</li>
-    <li>Aplikacja nie zgłasza kontroli policji ani fotoradarów mobilnych i&nbsp;nie prowadzi nawigacji.</li>
-    <li>Aplikacja jest udostępniana bez gwarancji. W&nbsp;granicach prawa autor nie odpowiada za szkody wynikłe z&nbsp;korzystania z&nbsp;niej, w&nbsp;tym za mandaty. Nie ogranicza to praw konsumenta, których nie można wyłączyć umową.</li>
-    <li>Do tych warunków stosuje się prawo polskie.</li>
-    <li>Nową wersję warunków opublikujemy na tej stronie, z&nbsp;nową datą.</li>
-  </ol>
+    <ol>
+      <li>Aplikacja jest bezpłatna. Udostępnia ją Marcin Obolewicz, <a href="mailto:kontakt@odcinkowy.eu">kontakt@odcinkowy.eu</a>.</li>
+      <li>Aplikacja tylko podpowiada. Obowiązują znaki drogowe i&nbsp;przepisy ruchu drogowego, a&nbsp;za sposób jazdy odpowiada kierowca.</li>
+      <li>W trakcie jazdy nie obsługuj telefonu. Aplikację uruchamiasz przed jazdą; w&nbsp;trakcie nie trzeba jej dotykać.</li>
+      <li>Dane o&nbsp;odcinkach, limitach i&nbsp;fotoradarach pochodzą z&nbsp;OpenStreetMap i&nbsp;z&nbsp;rejestru CANARD Głównego Inspektoratu Transportu Drogowego. Mogą być niepełne albo nieaktualne. Gdy limitu nie ma w&nbsp;danych, aplikacja pokazuje „?”.</li>
+      <li>Pozycja z&nbsp;GPS ma ograniczoną dokładność, a&nbsp;urządzenie pomiarowe może zmierzyć inaczej niż aplikacja. Zalecana prędkość nie gwarantuje, że zmierzona średnia nie przekroczy limitu ani że nie dostaniesz mandatu.</li>
+      <li>Aplikacja nie zgłasza kontroli policji ani fotoradarów mobilnych i&nbsp;nie prowadzi nawigacji.</li>
+      <li>Aplikacja jest udostępniana bez gwarancji. W&nbsp;granicach prawa autor nie odpowiada za szkody wynikłe z&nbsp;korzystania z&nbsp;niej, w&nbsp;tym za mandaty. Nie ogranicza to praw konsumenta, których nie można wyłączyć umową.</li>
+      <li>Do tych warunków stosuje się prawo polskie.</li>
+      <li>Nową wersję warunków opublikujemy na tej stronie, z&nbsp;nową datą.</li>
+    </ol>
+  </main>
 
-  <footer>
-    <p>© 2026 Marcin Obolewicz · <a href="mailto:kontakt@odcinkowy.eu">kontakt@odcinkowy.eu</a></p>
+  <footer class="site-footer">
+    <div class="footer-row">
+      <div class="footer-links">
+        <span>© 2026 Odcinkowy</span>
+        <a href="/prywatnosc/">Polityka prywatności</a>
+        <a href="/warunki/">Warunki korzystania</a>
+        <a href="/wsparcie/">Kontakt</a>
+      </div>
+      <span>Dane: © współtwórcy <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, CANARD (GITD)</span>
+    </div>
+    <p>Odcinkowy pomaga pilnować średniej, ale za prędkość odpowiadasz Ty. Zawsze stosuj się do znaków i&nbsp;warunków na drodze.</p>
   </footer>
+</div>
 </body>
 </html>
