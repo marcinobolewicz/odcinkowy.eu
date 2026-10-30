@@ -8,6 +8,10 @@ Strona aplikacji Odcinkowy: krótki opis, polityka prywatności, warunki korzyst
 
 Zwykły HTML i jeden plik CSS, bez builda, ciasteczek i analityki. Hostuje GitHub Pages z gałęzi `main` (`.nojekyll` wyłącza Jekylla, `CNAME` ustawia domenę). Kod aplikacji jest w repozytorium `odcinkowy` (zadanie #131).
 
+## Po wydaniu aplikacji
+
+W `index.html`, w sekcji „Pobierz”, zamień „wkrótce” na linki do stron aplikacji w App Store i Google Play, np. `<li><a href="https://apps.apple.com/pl/app/…">App Store</a> (iPhone)</li>`.
+
 ## Jednorazowa konfiguracja
 
 1. GitHub: Settings → Pages → Source: „Deploy from a branch”, gałąź `main`, katalog `/ (root)`. Custom domain: `odcinkowy.eu`.

@@ -10,6 +10,12 @@ body {
   line-height: 1.6;
 }
 
+.app-icon {
+  display: block;
+  margin-top: 2rem;
+  border-radius: 22px;
+}
+
 nav a + a {
   margin-left: 1rem;
 }
