@@ -1,0 +1,21 @@
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+nav a + a {
+  margin-left: 1rem;
+}
+
+footer {
+  margin-top: 3rem;
+  font-size: 0.875rem;
+  opacity: 0.75;
+}
