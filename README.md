@@ -16,7 +16,7 @@ Zwykły HTML i CSS, bez builda, skryptów, ciasteczek i analityki, na hostingu O
 | `prywatnosc/`, `warunki/`, `wsparcie/` | Dokumenty |
 | `styles.css` | Tokeny (jasne w `:root`, ciemne w `prefers-color-scheme: dark`) i układ: od 1024 px dwie kolumny w hero |
 | `fonts/` | Barlow i Barlow Condensed (OFL, `fonts/OFL.txt`), hostowane razem ze stroną, żeby nie łączyć się z Google Fonts |
-| `favicon.svg`, `apple-touch-icon.png` | Ikona C apki |
+| `favicon.svg`, `apple-touch-icon.png` | Ikona apki (wariant E, `docs/icon/odcinkowy-ikona.svg` w repozytorium `odcinkowy`) |
 | `og.png` | Podgląd linku (1200 × 630): hero w ciemnym motywie |
 
 Ikony funkcji pochodzą z Lucide (licencja ISC).
