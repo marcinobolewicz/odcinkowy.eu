@@ -1,0 +1,1092 @@
+@import url('/fonts/fonts.css');
+
+/* Tokeny z arkusza „Kolory” apki: jasne w :root, ciemne według ustawienia systemu. Bez przełącznika. */
+:root {
+  color-scheme: light dark;
+  --background: #f4f3ef;
+  --surface: #ffffff;
+  --surface-inset: #f4f3ef;
+  --outline: #e2e0d9;
+  --outline-strong: #cfccc4;
+  --text-primary: #16181c;
+  --text-secondary: #5e646c;
+  --text-message: #3d434a;
+  --accent: #009e88;
+  --accent-text: #00776a;
+  --accent-text-hover: #005a50;
+  --accent-button: #009e88;
+  --on-accent: #ffffff;
+  --accent-border: #009e8855;
+  --control: #ffffff;
+  --control-border: #e2e0d9;
+  --badge-border: #000000;
+  --phone-shadow: rgba(22, 24, 28, 0.16);
+  --phone-shadow-front: rgba(22, 24, 28, 0.22);
+  /* Neutralna mapa pod Live Activity. */
+  --map: #f4f3ef;
+  --map-street: #ffffff;
+  --map-casing: #cfccc4;
+  --map-label: #ffffff;
+  --map-card: #ffffff;
+  --map-card-border: #e2e0d9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #101215;
+    --surface: #1a1d21;
+    --surface-inset: #23272c;
+    --outline: #2a2f35;
+    --outline-strong: #3a4048;
+    --text-primary: #f1f0eb;
+    --text-secondary: #a3a9b1;
+    --text-message: #c9cdd3;
+    --accent: #2edbc0;
+    --accent-text: #2edbc0;
+    --accent-text-hover: #8aeedd;
+    --accent-border: #2edbc066;
+    --control: #23272c;
+    --control-border: #23272c;
+    --badge-border: #3a4048;
+    --phone-shadow: rgba(0, 0, 0, 0.45);
+    --phone-shadow-front: rgba(0, 0, 0, 0.55);
+    --map: #1a1d21;
+    --map-street: #23272c;
+    --map-casing: #3a4048;
+    --map-label: #3a4048;
+    --map-card: #23272c;
+    --map-card-border: #23272c;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  color: var(--accent-text);
+}
+
+a:hover {
+  color: var(--accent-text-hover);
+}
+
+.condensed {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+}
+
+.page {
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nagłówek */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 8px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 600;
+}
+
+.brand:hover {
+  color: var(--text-primary);
+}
+
+.brand img {
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px var(--outline);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.site-nav .nav-link {
+  display: none;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.button {
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 20px;
+  background: var(--accent-button);
+  color: var(--on-accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.button:hover {
+  color: var(--on-accent);
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px 20px 40px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 52px;
+  line-height: 0.98;
+  font-weight: 500;
+}
+
+.lead {
+  margin: 0;
+  max-width: 520px;
+  font-size: 17px;
+  line-height: 26px;
+  color: var(--text-secondary);
+}
+
+.note {
+  margin: 0;
+  font-size: 13px;
+  line-height: 17px;
+  color: var(--text-secondary);
+}
+
+/* Odznaki sklepów. Do wydania zaślepki bez logotypów; potem oficjalne odznaki (README). */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.badge {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 48px;
+  padding: 0 14px;
+  border-radius: 12px;
+  background: #000000;
+  border: 1px solid var(--badge-border);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.badge small {
+  font-size: 10px;
+  line-height: 13px;
+}
+
+.badge strong {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Telefony w hero */
+.phones {
+  align-self: center;
+  position: relative;
+  width: 271px;
+  height: 575px;
+  margin-top: 12px;
+}
+
+.phone-back {
+  display: none;
+}
+
+.phone-front {
+  transform: scale(0.82);
+  transform-origin: top left;
+}
+
+.phone {
+  background: #000000;
+}
+
+.phone-front .phone {
+  width: 330px;
+  height: 700px;
+  padding: 10px;
+  border-radius: 56px;
+  box-shadow: 0 0 0 1px var(--outline), 0 40px 80px var(--phone-shadow-front);
+}
+
+.phone-front .screen {
+  position: relative;
+  width: 310px;
+  height: 680px;
+  border-radius: 46px;
+  overflow: hidden;
+  background: var(--map);
+}
+
+.map {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.map .bg {
+  fill: var(--map);
+}
+
+.map .streets {
+  stroke: var(--map-street);
+}
+
+.map .casing {
+  stroke: var(--map-casing);
+}
+
+.map .route {
+  stroke: #2e6ccb;
+}
+
+.map .label {
+  fill: var(--map-label);
+  stroke: var(--map-casing);
+}
+
+.map .label-text {
+  fill: var(--text-primary);
+  font-family: 'Barlow', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.map .puck {
+  fill: #ffffff;
+  stroke: var(--map-casing);
+}
+
+/* Live Activity jest zawsze ciemna, jak w apce. */
+.live {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  height: 128px;
+  padding: 14px 20px;
+  border-radius: 40px;
+  background: #000000;
+  box-shadow: 0 0 0 1px #2edbc0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #f1f0eb;
+}
+
+.live-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  line-height: 14px;
+  color: #a3a9b1;
+}
+
+.live-head svg {
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+
+.live-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.live-advice {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.live-label {
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #2edbc0;
+}
+
+.live-number {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  font-size: 11px;
+  line-height: 14px;
+  color: #a3a9b1;
+}
+
+.live-number span {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 42px;
+  line-height: 0.95;
+  font-weight: 500;
+  color: #2edbc0;
+}
+
+.live-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.live-stats span + span {
+  color: #a3a9b1;
+}
+
+.live-track {
+  position: relative;
+  height: 10px;
+}
+
+.live-track .dot {
+  position: absolute;
+  top: 1px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.live-track .start {
+  left: 0;
+  background: #2edbc0;
+}
+
+.live-track .end {
+  right: 0;
+  background: #f1f0eb;
+}
+
+.live-track .bar {
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  top: 4px;
+  height: 3px;
+  border-radius: 2px;
+  background: #3a4048;
+}
+
+.live-track .done {
+  width: 58%;
+  height: 3px;
+  border-radius: 2px;
+  background: #2edbc0;
+}
+
+.live-track .car {
+  position: absolute;
+  left: 58%;
+  top: -4px;
+  width: 11px;
+  height: 11px;
+  margin-left: -5px;
+  border-radius: 50%;
+  background: #2edbc0;
+  border: 2px solid #000000;
+}
+
+.nav-card {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 26px;
+  height: 72px;
+  padding: 0 20px;
+  border-radius: 24px;
+  background: var(--map-card);
+  border: 1px solid var(--map-card-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
+.nav-card strong {
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 600;
+}
+
+.nav-card span {
+  font-size: 13px;
+  line-height: 17px;
+  color: var(--text-secondary);
+}
+
+.home-indicator {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  width: 120px;
+  margin-left: -60px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--text-primary);
+  opacity: 0.6;
+}
+
+/* Ekran odcinka z apki (telefon z tyłu, tylko na szerokim ekranie), w motywie strony. */
+.phone-back .phone {
+  width: 290px;
+  height: 612px;
+  padding: 8px;
+  border-radius: 50px;
+  box-shadow: 0 0 0 1px var(--outline), 0 30px 60px var(--phone-shadow);
+}
+
+.phone-back .screen {
+  position: relative;
+  width: 274px;
+  height: 596px;
+  border-radius: 42px;
+  overflow: hidden;
+  background: var(--background);
+}
+
+.drive {
+  position: relative;
+  width: 390px;
+  height: 844px;
+  padding: 62px 20px 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transform: scale(0.7026);
+  transform-origin: top left;
+}
+
+.island {
+  position: absolute;
+  top: 11px;
+  left: 132px;
+  width: 126px;
+  height: 37px;
+  border-radius: 19px;
+  background: #000000;
+}
+
+.drive-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.drive-title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.drive-title small {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.drive-title strong {
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+.drive-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.voice {
+  width: 52px;
+  height: 52px;
+  border-radius: 26px;
+  background: var(--control);
+  border: 1px solid var(--control-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+}
+
+.end-button {
+  height: 52px;
+  padding: 0 26px;
+  border-radius: 26px;
+  background: #c93a3f;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.progress-labels span:first-child {
+  color: var(--text-secondary);
+}
+
+.progress-labels span:last-child {
+  font-weight: 500;
+}
+
+.progress {
+  height: 8px;
+  margin-top: 8px;
+  border-radius: 4px;
+  background: var(--outline);
+  overflow: hidden;
+}
+
+.progress div {
+  width: 58%;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--accent);
+}
+
+.advice-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 24px;
+  background: var(--surface);
+  border: 2px solid var(--accent-border);
+  text-align: center;
+}
+
+.advice-label {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--accent-text);
+}
+
+.advice-number {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.advice-number span {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 144px;
+  line-height: 0.9;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.advice-message {
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--text-message);
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 120px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: var(--surface);
+  font-size: 13px;
+  line-height: 16px;
+  color: var(--text-secondary);
+}
+
+.tile strong {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Co potrafi */
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 24px 20px 48px;
+}
+
+h2 {
+  margin: 0;
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  background: var(--surface);
+  border: 1px solid var(--outline);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feature-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.feature-list div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+h3 {
+  margin: 0;
+  font-size: 19px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.feature-list p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 22px;
+  color: var(--text-secondary);
+}
+
+/* Pobierz */
+.download {
+  margin: 0 20px;
+  padding: 32px 20px;
+  border-radius: 28px;
+  background: var(--surface);
+  border: 1px solid var(--outline);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.download img {
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  box-shadow: 0 0 0 1px var(--outline);
+}
+
+.download h2 {
+  margin-top: 4px;
+  font-size: 34px;
+}
+
+.download p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--text-secondary);
+}
+
+.download .badges {
+  justify-content: center;
+  padding-top: 8px;
+}
+
+/* Stopka */
+.site-footer {
+  margin-top: auto;
+  padding: 32px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 13px;
+  line-height: 19px;
+  color: var(--text-secondary);
+}
+
+.footer-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.footer-links a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--accent-text);
+}
+
+.site-footer p {
+  margin: 0;
+  max-width: 760px;
+}
+
+/* Dokumenty: polityka, warunki, wsparcie */
+.document {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+  font-size: 17px;
+  line-height: 27px;
+}
+
+.document h1 {
+  font-size: 44px;
+  margin-bottom: 8px;
+}
+
+.document h2 {
+  margin-top: 32px;
+  font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.document p,
+.document li {
+  color: var(--text-message);
+}
+
+.document .meta {
+  color: var(--text-secondary);
+}
+
+/* Od ok. 1024 px: dwie kolumny w hero, telefony obok siebie, funkcje w siatce. */
+@media (min-width: 1024px) {
+  .site-header {
+    padding: 28px clamp(48px, 6.67vw, 96px);
+  }
+
+  .brand {
+    gap: 12px;
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .brand img {
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
+  }
+
+  .site-nav .nav-link {
+    display: inline;
+  }
+
+  .button {
+    height: 44px;
+    padding: 0 22px;
+    border-radius: 22px;
+    font-size: 16px;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 450px;
+    gap: 48px;
+    align-items: center;
+    padding: 16px clamp(48px, 6.67vw, 96px) 64px;
+  }
+
+  .hero-text {
+    gap: 24px;
+  }
+
+  .eyebrow {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  h1 {
+    font-size: 68px;
+    line-height: 0.95;
+  }
+
+  .lead {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .note {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .badges {
+    gap: 12px;
+    padding-top: 8px;
+  }
+
+  .badge {
+    height: 56px;
+    padding: 0 22px 0 18px;
+  }
+
+  .badge small {
+    font-size: 11px;
+    line-height: 14px;
+  }
+
+  .badge strong {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  /* Telefony w polu 600 × 720 z planszy, zmniejszone do szerokości kolumny. */
+  .phones {
+    width: 450px;
+    height: 540px;
+    margin-top: 0;
+  }
+
+  .phones-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 600px;
+    height: 720px;
+    transform: scale(0.75);
+    transform-origin: top left;
+  }
+
+  .phone-back {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 84px;
+  }
+
+  .phone-front {
+    position: absolute;
+    left: 270px;
+    top: 0;
+    transform: none;
+  }
+
+  .features {
+    gap: 40px;
+    padding: 16px clamp(48px, 6.67vw, 96px) 96px;
+  }
+
+  h2 {
+    font-size: 48px;
+  }
+
+  .feature-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 48px;
+  }
+
+  .feature-list li {
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 24px;
+    border-top: 1px solid var(--outline);
+  }
+
+  .feature-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .feature-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .feature-list div {
+    gap: 12px;
+  }
+
+  h3 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .feature-list p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .download {
+    margin: 0 clamp(48px, 6.67vw, 96px);
+    padding: 56px 64px 64px;
+    border-radius: 32px;
+    gap: 16px;
+  }
+
+  .download img {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+  }
+
+  .download h2 {
+    margin-top: 8px;
+    font-size: 48px;
+  }
+
+  .download p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .site-footer {
+    padding: 48px clamp(48px, 6.67vw, 96px);
+    gap: 16px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .footer-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .footer-links {
+    gap: 24px;
+  }
+
+  .document {
+    padding-top: 32px;
+  }
+}
+
+/* Na planszy desktop 1440: telefony w pełnym rozmiarze i nagłówek 84 px. */
+@media (min-width: 1280px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 600px;
+  }
+
+  h1 {
+    font-size: 84px;
+  }
+
+  .phones {
+    width: 600px;
+    height: 720px;
+  }
+
+  .phones-inner {
+    transform: none;
+  }
+}
