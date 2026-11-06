@@ -19,7 +19,6 @@
   --accent-border: #009e8855;
   --control: #ffffff;
   --control-border: #e2e0d9;
-  --badge-border: #000000;
   --phone-shadow: rgba(22, 24, 28, 0.16);
   --phone-shadow-front: rgba(22, 24, 28, 0.22);
   /* Neutralna mapa pod Live Activity. */
@@ -47,7 +46,6 @@
     --accent-border: #2edbc066;
     --control: #23272c;
     --control-border: #23272c;
-    --badge-border: #3a4048;
     --phone-shadow: rgba(0, 0, 0, 0.45);
     --phone-shadow-front: rgba(0, 0, 0, 0.55);
     --map: #1a1d21;
@@ -204,36 +202,30 @@ h1 {
   color: var(--text-secondary);
 }
 
-/* Odznaki sklepów. Do wydania zaślepki bez logotypów; potem oficjalne odznaki (README). */
+/* Odznaki sklepów: oficjalne pliki bez zmian, obie widoczne na tej samej wysokości. */
 .badges {
+  --badge-height: 48px;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
 }
 
 .badge {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 48px;
-  padding: 0 14px;
-  border-radius: 12px;
-  background: #000000;
-  border: 1px solid var(--badge-border);
-  color: #ffffff;
-  text-decoration: none;
+  display: block;
+  line-height: 0;
 }
 
-.badge small {
-  font-size: 10px;
-  line-height: 13px;
+.badge img {
+  display: block;
+  width: auto;
+  height: var(--badge-height);
 }
 
-.badge strong {
-  font-size: 18px;
-  line-height: 22px;
-  font-weight: 600;
-  white-space: nowrap;
+/* PNG Google Play ma przezroczysty margines: 29 z 250 px u góry i u dołu. */
+.badge-play img {
+  height: calc(var(--badge-height) * 250 / 192);
+  margin: calc(var(--badge-height) * -29 / 192) 0;
 }
 
 /* Telefony w hero */
@@ -772,7 +764,7 @@ h3 {
   text-align: center;
 }
 
-.download img {
+.download > img {
   display: block;
   width: 64px;
   height: 64px;
@@ -928,23 +920,9 @@ h3 {
   }
 
   .badges {
+    --badge-height: 56px;
     gap: 12px;
     padding-top: 8px;
-  }
-
-  .badge {
-    height: 56px;
-    padding: 0 22px 0 18px;
-  }
-
-  .badge small {
-    font-size: 11px;
-    line-height: 14px;
-  }
-
-  .badge strong {
-    font-size: 20px;
-    line-height: 24px;
   }
 
   /* Telefony w polu 600 × 720 z planszy, zmniejszone do szerokości kolumny. */
@@ -1032,7 +1010,7 @@ h3 {
     gap: 16px;
   }
 
-  .download img {
+  .download > img {
     width: 72px;
     height: 72px;
     border-radius: 16px;
