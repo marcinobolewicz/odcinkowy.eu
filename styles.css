@@ -19,6 +19,7 @@
   --accent-border: #009e8855;
   --control: #ffffff;
   --control-border: #e2e0d9;
+  --badge-border: #000000;
   --phone-shadow: rgba(22, 24, 28, 0.16);
   --phone-shadow-front: rgba(22, 24, 28, 0.22);
   /* Neutralna mapa pod Live Activity. */
@@ -46,6 +47,7 @@
     --accent-border: #2edbc066;
     --control: #23272c;
     --control-border: #23272c;
+    --badge-border: #3a4048;
     --phone-shadow: rgba(0, 0, 0, 0.45);
     --phone-shadow-front: rgba(0, 0, 0, 0.55);
     --map: #1a1d21;
@@ -226,6 +228,31 @@ h1 {
 .badge-play img {
   height: calc(var(--badge-height) * 250 / 192);
   margin: calc(var(--badge-height) * -29 / 192) 0;
+}
+
+/* Zaślepka sklepu, którego karta nie jest jeszcze publiczna: sam tekst, bez logotypu. */
+.badge-soon {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  height: var(--badge-height);
+  padding: 0 14px;
+  border-radius: 12px;
+  background: #000000;
+  border: 1px solid var(--badge-border);
+  color: #ffffff;
+}
+
+.badge-soon small {
+  font-size: 10px;
+  line-height: 13px;
+}
+
+.badge-soon strong {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 /* Telefony w hero */
@@ -923,6 +950,20 @@ h3 {
     --badge-height: 56px;
     gap: 12px;
     padding-top: 8px;
+  }
+
+  .badge-soon {
+    padding: 0 22px 0 18px;
+  }
+
+  .badge-soon small {
+    font-size: 11px;
+    line-height: 14px;
+  }
+
+  .badge-soon strong {
+    font-size: 20px;
+    line-height: 24px;
   }
 
   /* Telefony w polu 600 × 720 z planszy, zmniejszone do szerokości kolumny. */
