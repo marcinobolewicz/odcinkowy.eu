@@ -204,32 +204,51 @@ h1 {
   color: var(--text-secondary);
 }
 
-/* Odznaki sklepów. Do wydania zaślepki bez logotypów; potem oficjalne odznaki (README). */
+/* Odznaki sklepów: oficjalne pliki bez zmian, obie widoczne na tej samej wysokości. */
 .badges {
+  --badge-height: 48px;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
 }
 
 .badge {
+  display: block;
+  line-height: 0;
+}
+
+.badge img {
+  display: block;
+  width: auto;
+  height: var(--badge-height);
+}
+
+/* PNG Google Play ma przezroczysty margines: 29 z 250 px u góry i u dołu. */
+.badge-play img {
+  height: calc(var(--badge-height) * 250 / 192);
+  margin: calc(var(--badge-height) * -29 / 192) 0;
+}
+
+/* Zaślepka sklepu, którego karta nie jest jeszcze publiczna: sam tekst, bez logotypu. */
+.badge-soon {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  height: 48px;
+  height: var(--badge-height);
   padding: 0 14px;
   border-radius: 12px;
   background: #000000;
   border: 1px solid var(--badge-border);
   color: #ffffff;
-  text-decoration: none;
 }
 
-.badge small {
+.badge-soon small {
   font-size: 10px;
   line-height: 13px;
 }
 
-.badge strong {
+.badge-soon strong {
   font-size: 18px;
   line-height: 22px;
   font-weight: 600;
@@ -772,7 +791,7 @@ h3 {
   text-align: center;
 }
 
-.download img {
+.download > img {
   display: block;
   width: 64px;
   height: 64px;
@@ -928,21 +947,21 @@ h3 {
   }
 
   .badges {
+    --badge-height: 56px;
     gap: 12px;
     padding-top: 8px;
   }
 
-  .badge {
-    height: 56px;
+  .badge-soon {
     padding: 0 22px 0 18px;
   }
 
-  .badge small {
+  .badge-soon small {
     font-size: 11px;
     line-height: 14px;
   }
 
-  .badge strong {
+  .badge-soon strong {
     font-size: 20px;
     line-height: 24px;
   }
@@ -1032,7 +1051,7 @@ h3 {
     gap: 16px;
   }
 
-  .download img {
+  .download > img {
     width: 72px;
     height: 72px;
     border-radius: 16px;
