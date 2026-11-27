@@ -27,7 +27,7 @@ Ikony funkcji pochodzą z Lucide (licencja ISC).
 Odznaki w hero i w „Pobierz” prowadzą do kart apki:
 
 - App Store: https://apps.apple.com/pl/app/odcinkowy/id6826824938 (apka jest tylko w polskim sklepie, więc link ma `/pl/`);
-- Google Play: https://play.google.com/store/apps/details?id=pl.shredmate.odcinkowy. Apka jest na razie w otwartych testach (wersja 0.1.1), więc Google Play pokazuje ją jako wczesny dostęp; po wydaniu produkcyjnym adres karty zostaje ten sam.
+- Google Play: https://play.google.com/store/apps/details?id=pl.shredmate.odcinkowy.
 
 Gdy telefony w hero zastąpią prawdziwe zrzuty z apki, wstaw je jako `<picture>` z wersją ciemną w `media="(prefers-color-scheme: dark)"` i odśwież `og.png` (zrzut hero 1440 × 756 w ciemnym motywie, zmniejszony do 1200 × 630).
 
